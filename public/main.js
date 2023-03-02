@@ -1,7 +1,12 @@
 var video = document.getElementById("myVideo");
 
 document.getElementById('link-to-buy').addEventListener('click', function () {
-  ga('send', 'event', 'link', 'click', 'buy_full_course_cta', 499);
+  // ga('send', 'event', 'link', 'click', 'buy_full_course_cta', 499);
+  gtag('event', 'click', {
+    'event_category': 'link',
+    'event_label': 'buy_full_course_cta',
+    'value': 499
+  });
   modal.style.display = "block";
   console.log("CTA clicked")
 });
