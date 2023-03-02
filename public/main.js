@@ -1,7 +1,6 @@
 var video = document.getElementById("myVideo");
 
 document.getElementById('link-to-buy').addEventListener('click', function () {
-  // ga('send', 'event', 'link', 'click', 'buy_full_course_cta', 499);
   gtag('event', 'click', {
     'event_category': 'link',
     'event_label': 'buy_full_course_cta',
@@ -35,10 +34,26 @@ window.onclick = function (event) {
 
 // Disable the Register button until a valid email is entered
 var emailInput = document.getElementById("email");
-var registerButton = document.getElementById("registerBtn");
+const registerButton = document.getElementById("registerBtn");
+
+registerButton.disabled = true;
+
+emailInput.addEventListener(('keyup'), ()=> {
+  if(emailInput.checkValidity()){
+    registerButton.disabled = false;
+  }
+  else{
+    registerButton.disabled = true;
+  }
+})
 
 registerButton.onclick = function () {
   var email = emailInput.value;
+  gtag('event', 'click', {
+    'event_category': 'submit',
+    'event_label': 'email_submission',
+    'value': 499
+  });
   // Do something with the email, such as sending it to a server
   alert("Thank you for registering with the email: " + email);
   modal.style.display = "none";
