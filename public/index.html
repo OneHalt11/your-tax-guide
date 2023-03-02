@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Course Title</title>
+	<title>How to File ITR1 (Sahaj Form)</title>
 	<style type="text/css">
 		body {
 			background-image: url("./assets/bg-image.jpg");
@@ -11,35 +12,40 @@
 			padding: 0;
 			font-family: Arial, sans-serif;
 		}
+
 		.container {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			flex-wrap: wrap;
 			justify-content: center;
 			height: 100vh;
 			padding: 50px;
 			box-sizing: border-box;
 		}
+
 		.content {
-			width: 50%;
 			padding: 50px;
-			background-color: rgba(255,255,255,0.8);
+			background-color: rgba(255, 255, 255, 0.8);
 			border-radius: 10px;
-			box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+			box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 			text-align: center;
-			margin-right: 50px;
 			box-sizing: border-box;
 		}
+
 		.title {
 			font-size: 36px;
 			font-weight: bold;
 			margin-bottom: 20px;
 		}
+
 		.description {
 			font-size: 18px;
 			margin-bottom: 30px;
 		}
+
 		.button {
+			width: 50%;
 			background-color: #4CAF50;
 			color: white;
 			font-size: 24px;
@@ -49,43 +55,184 @@
 			text-decoration: none;
 			margin-top: 20px;
 			display: inline-block;
+			transition: all 0.3s ease;
+			/* Add a transition effect */
 		}
+
+		.button:hover {
+			background-color: #3e8e41;
+			font-size: 28px;
+			cursor: pointer;
+			/* Change the cursor to a hand icon on hover */
+		}
+
 		.price {
 			font-size: 24px;
 			font-weight: bold;
 			margin-top: 20px;
 		}
+
 		video {
 			width: 50%;
 			border-radius: 10px;
-			box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
-			margin-left: 50px;
+			box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 			box-sizing: border-box;
+			background-color: #4CAF50;
+			cursor: pointer;
+		}
+
+		/* Modal styles */
+		.modal {
+			display: none;
+			/* Hidden by default */
+			position: fixed;
+			/* Stay in place */
+			z-index: 1;
+			/* Sit on top */
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			/* Enable scroll if needed */
+			background-color: rgba(0, 0, 0, 0.4);
+			/* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+			background-color: #fefefe;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #888;
+			border-radius: 10px;
+			width: 50%;
+		}
+
+		/* Close Button */
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		/* Modal Title */
+		.modal-title {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		/* Form Group */
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		/* Form Label */
+		.form-label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		/* Form Control */
+		.form-control {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+
+		/* Register Button */
+		.btn-register {
+			background-color: #4CAF50;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px 20px;
+			border-radius: 5px;
+			text-decoration: none;
+			cursor: pointer;
+			border: none;
+		}
+
+		.btn-register:hover {
+			background-color: #3e8e41;
+		}
+
+		button#registerBtn {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.flex-col {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.content {
+				width: 100%;
+			}
 		}
 	</style>
 	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-194795194-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-194795194-4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-  gtag('config', 'UA-194795194-4');
-</script>
+		gtag('config', 'UA-194795194-4');
+	</script>
 
 </head>
+
 <body>
 	<div class="container">
 		<div class="content">
-			<h1 class="title">Course Title</h1>
-			<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-			<a id="link-to-buy" href="#" class="button">Buy the full course for &#8377;499 only</a>
+			<h1 class="title">Master the art of filing ITR1 and save money on taxes!</h1>
+			<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+				laboris.</p>
+			<div class="flex-col">
+				<video id="myVideo" poster="./assets/Video_Thumbnail.png" controls>
+					<source src="./assets/HRA Exemption Edited_1.mp4" type="video/mp4">
+				  </video>				  
+				<a id="link-to-buy" href="#" class="button">Buy the full course for just &#8377;499</a>
+			</div>
 			<!-- <p class="price">&#8377;499</p> -->
 		</div>
-		<video controls>
-			<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-		</video>
 	</div>
+	<!-- Modal HTML -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2 class="modal-title">Register for the course</h2>
+			<form id="register-form">
+				<div class="form-group">
+					<label for="email" class="form-label">Email address:</label>
+					<input type="email" id="email" name="email" class="form-control" required
+						placeholder="Enter your email address">
+				</div>
+				<div class="form-group">
+					<button id="registerBtn" type="submit" class="btn-register" disabled>Register</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
 	<script src="main.js"></script>
 </body>
+
 </html>
