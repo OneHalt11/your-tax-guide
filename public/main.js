@@ -34,9 +34,9 @@ window.onclick = function (event) {
 
 // Disable the Register button until a valid email is entered
 var emailInput = document.getElementById("email");
-const registerButton = document.getElementById("registerBtn");
+var registerButton = document.getElementById("registerBtn");
 
-registerButton.disabled = true;
+// registerButton.disabled = true;
 
 emailInput.addEventListener(('keyup'), ()=> {
   if(emailInput.checkValidity()){
