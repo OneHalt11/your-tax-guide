@@ -20,6 +20,14 @@ video.addEventListener('play', function() {
   console.log("Played")
 });
 
+video.addEventListener('ended', function() {
+  gtag('event', 'ended', {
+    'event_category': 'media',
+    'event_label': 'preview_video_ended'
+  });
+  console.log("Ended")
+});
+
 
 // Get the modal
 var modal = document.getElementById("myModal");
