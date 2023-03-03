@@ -3,8 +3,7 @@ var video = document.getElementById("myVideo");
 document.getElementById('link-to-buy').addEventListener('click', function () {
   gtag('event', 'click', {
     'event_category': 'link',
-    'event_label': 'buy_full_course_cta',
-    'value': 25
+    'event_label': 'buy_full_course_cta'
   });
   modal.style.display = "block";
   console.log("CTA clicked")
@@ -16,8 +15,7 @@ video.playbackRate = 1.25;
 video.addEventListener('play', function() {
   gtag('event', 'play', {
     'event_category': 'media',
-    'event_label': 'preview_video_play',
-    'value': 15
+    'event_label': 'preview_video_play'
   });
   console.log("Played")
 });
@@ -61,7 +59,7 @@ registerButton.onclick = function () {
   gtag('event', 'click', {
     'event_category': 'submit',
     'event_label': 'email_submission',
-    'value': 50
+    'value': 20
   });
   // Do something with the email, such as sending it to a server
   alert("Thank you for registering with the email: " + email);
