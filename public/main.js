@@ -5,6 +5,17 @@ document.getElementById('link-to-buy').addEventListener('click', function () {
     'event_category': 'link',
     'event_label': 'buy_full_course_cta'
   });
+
+  fetch('/api/clicks', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      click: 'CTA button'
+    })
+  })
+
   modal.style.display = "block";
   console.log("CTA clicked")
 });
@@ -12,7 +23,7 @@ document.getElementById('link-to-buy').addEventListener('click', function () {
 
 video.playbackRate = 1.25;
 
-video.addEventListener('play', function() {
+video.addEventListener('play', function () {
   gtag('event', 'play', {
     'event_category': 'media',
     'event_label': 'preview_video_play'
@@ -20,7 +31,7 @@ video.addEventListener('play', function() {
   console.log("Played")
 });
 
-video.addEventListener('ended', function() {
+video.addEventListener('ended', function () {
   gtag('event', 'ended', {
     'event_category': 'media',
     'event_label': 'preview_video_ended'
@@ -47,20 +58,9 @@ window.onclick = function (event) {
   }
 }
 
-// Disable the Register button until a valid email is entered
 var emailInput = document.getElementById("email");
 var registerButton = document.getElementById("registerBtn");
 
-// registerButton.disabled = true;
-
-emailInput.addEventListener(('keyup'), ()=> {
-  if(emailInput.checkValidity()){
-    registerButton.disabled = false;
-  }
-  else{
-    registerButton.disabled = true;
-  }
-})
 
 registerButton.onclick = function () {
   var email = emailInput.value;
@@ -69,9 +69,29 @@ registerButton.onclick = function () {
     'event_label': 'email_submission',
     'value': 20
   });
-  // Do something with the email, such as sending it to a server
-  alert("Thank you for registering with the email: " + email);
-  modal.style.display = "none";
+
+  fetch('/api/emails', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: email
+    })
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(response => {
+      alert("Thank you for registering with the email: " + email);
+      modal.style.display = "none";
+    })
+    .catch(error => {
+      alert("Please enter a valid email!")
+    });
 }
 
 
