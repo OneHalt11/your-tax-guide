@@ -1,4 +1,4 @@
-var video = document.getElementById("myVideo");
+// var video = document.getElementById("myVideo");
 
 document.getElementById('link-to-buy').addEventListener('click', function () {
   gtag('event', 'click', {
@@ -21,23 +21,23 @@ document.getElementById('link-to-buy').addEventListener('click', function () {
 });
 
 
-video.playbackRate = 1.25;
+// video.playbackRate = 1.25;
 
-video.addEventListener('play', function () {
-  gtag('event', 'play', {
-    'event_category': 'media',
-    'event_label': 'preview_video_play'
-  });
-  console.log("Played")
-});
+// video.addEventListener('play', function () {
+//   gtag('event', 'play', {
+//     'event_category': 'media',
+//     'event_label': 'preview_video_play'
+//   });
+//   console.log("Played")
+// });
 
-video.addEventListener('ended', function () {
-  gtag('event', 'ended', {
-    'event_category': 'media',
-    'event_label': 'preview_video_ended'
-  });
-  console.log("Ended")
-});
+// video.addEventListener('ended', function () {
+//   gtag('event', 'ended', {
+//     'event_category': 'media',
+//     'event_label': 'preview_video_ended'
+//   });
+//   console.log("Ended")
+// });
 
 
 // Get the modal
